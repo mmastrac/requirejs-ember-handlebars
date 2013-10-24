@@ -1,9 +1,13 @@
 requirejs-ember-handlebars
 ==========================
 
-Require.js plugin to pre-compile Ember.js handlebar templates
+Require.js plugin to pre-compile Ember.js handlebar templates. Supports both JIT mode for development and
+pre-compilation as part of the require.js optimizer.
 
-License: MIT
+License
+=======
+
+MIT
 
 Build instructions
 ==================
@@ -34,9 +38,9 @@ Compiling templates at development/optimization time:
 
     // Example plugin usage:
     define(["ember", "lodash" 
-				"ember-hbs!dashboard/ember/templates/index",
-				"ember-hbs!dashboard/ember/templates/todos"], 
-				function(Ember, _, index_template, todos_template) {
+            "ember-hbs!templates/index",
+            "ember-hbs!templates/todos"], 
+        function(Ember, _, index_template, todos_template) {
             _.extend(Ember.TEMPLATES, { 
                  'todos': todos_template,
                  'todos/index': index_template
