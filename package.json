@@ -1,0 +1,9 @@
+{
+  "name": "requirejs-ember-handlebars",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-cli": "~0.1",
+    "grunt-requirejs": ">=0.1.0"
+  }
+}
