@@ -33,8 +33,6 @@ var Ember = { assert: function(){}, imports: {} };
 
         };
 
-define("src/ember-hbs", function(){});
-
 /*
 
 Copyright (C) 2011 by Yehuda Katz
@@ -2314,8 +2312,6 @@ Handlebars.template = Handlebars.VM.template;
 })(Handlebars);
 ;
 
-define("handlebars", function(){});
-
 /**
 @module ember
 @submodule ember-handlebars-compiler
@@ -2619,6 +2615,4 @@ if (Handlebars.compile) {
   };
 }
 ;
-define("ember-handlebars-compiler", function(){});
-
 return plugin; });

@@ -13,10 +13,7 @@ module.exports = function(grunt) {
 						'ember': 'empty:'
 					},
 					optimize: 'none',
-					uglify: {
-						beautify: true,
-						no_mangle: true
-					},
+					skipModuleInsertion: true,
 					pragmas: {
 						optimizer: false
 					},
@@ -38,10 +35,7 @@ module.exports = function(grunt) {
 						'ember-handlebars-compiler': 'vendor/ember-handlebars-compiler-1.0.0',
 					},
 					optimize: 'none',
-					uglify: {
-						beautify: true,
-						no_mangle: true
-					},
+					skipModuleInsertion: true,
 					pragmas: {
 						optimizer: true
 					},

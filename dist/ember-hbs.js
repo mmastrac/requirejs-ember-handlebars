@@ -1,6 +1,5 @@
 define(['text', 'ember'], function(text, Ember) {
 
-        var buildMap = {};
         var plugin = {
             version: "1.0.0",
             pluginBuilder: "ember-hbs-optimizer",
@@ -21,7 +20,5 @@ define(['text', 'ember'], function(text, Ember) {
             },
 
         };
-
-define("src/ember-hbs", function(){});
 return plugin; 
 });

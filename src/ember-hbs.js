@@ -1,4 +1,6 @@
+//>>includeStart("optimizer", pragmas.optimizer)
         var buildMap = {};
+//>>includeEnd("optimizer")
         var plugin = {
             version: "1.0.0",
 //>>excludeStart("optimizer", pragmas.optimizer)
