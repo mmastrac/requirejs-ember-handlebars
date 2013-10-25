@@ -14,9 +14,13 @@ define(['text', 'ember'], function(text, Ember) {
                 var moduleName = pluginConfig.processName(name);
 
                 // Get the text for the template and compile it for Ember.
-                text.load(moduleName, parentRequire, function (contents) {
+                var fn = function (contents) {
                     onload(Ember.Handlebars.compile(contents));
-                }, config);
+                };
+                fn.error = function() {
+                    console.log("Failed to load template: " + moduleName);
+                };
+                text.load(moduleName, parentRequire, fn, config);
             },
 
         };

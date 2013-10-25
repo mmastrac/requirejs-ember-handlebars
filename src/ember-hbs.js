@@ -18,21 +18,25 @@
 
 //>>includeStart("optimizer", pragmas.optimizer)
                 // Precompile the template.
-                text.load(moduleName, parentRequire, function (contents) {
+                var fn = function (contents) {
                     try {
                         buildMap[name] = Ember.Handlebars.precompile(contents);
                     } catch (e) {
                         console.log(e);
                     }
                     return onload();
-                }, config);
+                };
 //>>includeEnd("optimizer")
 //>>excludeStart("optimizer", pragmas.optimizer)
                 // Get the text for the template and compile it for Ember.
-                text.load(moduleName, parentRequire, function (contents) {
+                var fn = function (contents) {
                     onload(Ember.Handlebars.compile(contents));
-                }, config);
+                };
 //>>excludeEnd("optimizer")
+                fn.error = function() {
+                    console.log("Failed to load template: " + moduleName);
+                };
+                text.load(moduleName, parentRequire, fn, config);
             },
 //>>includeStart("optimizer", pragmas.optimizer)
             write: function (pluginName, moduleName, write, config) {

@@ -15,14 +15,18 @@ var Ember = { assert: function(){}, imports: {} };
                 var moduleName = pluginConfig.processName(name);
 
                 // Precompile the template.
-                text.load(moduleName, parentRequire, function (contents) {
+                var fn = function (contents) {
                     try {
                         buildMap[name] = Ember.Handlebars.precompile(contents);
                     } catch (e) {
                         console.log(e);
                     }
                     return onload();
-                }, config);
+                };
+                fn.error = function() {
+                    console.log("Failed to load template: " + moduleName);
+                };
+                text.load(moduleName, parentRequire, fn, config);
             },
             write: function (pluginName, moduleName, write, config) {
                 if (buildMap.hasOwnProperty(moduleName)) {
